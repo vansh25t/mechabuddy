@@ -1,0 +1,43 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #0b1020;
+  --color-panel: #121a33;
+  --color-line: #24305a;
+  --color-volt: #ffb800;
+  --color-circuit: #2de2a6;
+  --color-signal: #ff5c7a;
+  --color-sky: #6aa8ff;
+  --font-display: var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains), ui-monospace, monospace;
+}
+
+html {
+  color-scheme: dark;
+}
+
+body {
+  background-color: var(--color-ink);
+  color: #e8ecf8;
+  font-family: var(--font-display);
+  background-image:
+    linear-gradient(rgba(106, 168, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(106, 168, 255, 0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.card {
+  @apply rounded-2xl border border-line bg-panel/80 p-6 backdrop-blur;
+}
+
+.tag {
+  @apply inline-flex items-center gap-1 rounded-full border border-line px-3 py-1 font-mono text-xs uppercase tracking-wider text-sky;
+}
+
+.btn-primary {
+  @apply inline-flex items-center justify-center gap-2 rounded-xl bg-volt px-5 py-3 font-semibold text-ink transition hover:-translate-y-0.5 hover:shadow-[0_8px_0_0_#a67700] active:translate-y-0 active:shadow-none;
+}
+
+.btn-ghost {
+  @apply inline-flex items-center justify-center gap-2 rounded-xl border border-line px-5 py-3 font-semibold text-white transition hover:border-volt hover:text-volt;
+}
